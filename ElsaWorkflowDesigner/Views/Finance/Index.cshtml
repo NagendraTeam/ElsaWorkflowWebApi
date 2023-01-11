@@ -1,0 +1,51 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    $(document).ready(function () {
+        var jsonObject =
+            {
+                "Id": "1",
+                "Author":
+                {
+                    "Name": "John",
+                    "Email": "john@gmail.com"
+                },
+                "Body": "This is sample document.",
+                "Input": "Hello",
+                "DepartmentName": "Finance",
+                "ReqestedBy": '',
+                "Approver": "Ram70",
+                "Workflow": 'DepartmentBudgetApprovalFinance',
+                "Workflowid": ''
+            };
+        $.ajax({
+            url: "https://localhost:44370/" + 'DepartmentBudgetApprovalFinance',
+            type: "POST",
+            dataType: "json",
+            data: JSON.stringify(jsonObject),
+            contentType: "application/json; charset=utf-8",
+            success: function (response) {
+                alert(response.responseText);
+            },
+            error: function (response) {
+
+                const winHtml = response.responseText;
+                const winUrl = URL.createObjectURL(
+                    new Blob([winHtml], { type: "text/html" })
+                );
+                const win = window.open(
+                    winUrl,
+                    "win",
+                    `width=800,height=400,screenX=200,screenY=200`
+                );
+            }
+        });
+    });
+</script>
+
+<label id="name"></label>

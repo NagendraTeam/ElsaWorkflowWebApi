@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\_Layout.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\_Layout.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Elsa" Version="2.9.2" />
+    <PackageReference Include="Elsa.Activities.Email" Version="2.9.2" />
+    <PackageReference Include="Elsa.Activities.Http" Version="2.9.2" />
+    <PackageReference Include="Elsa.Activities.Temporal.Quartz" Version="2.9.2" />
+    <PackageReference Include="Elsa.Designer.Components.Web" Version="2.9.2" />
+    <PackageReference Include="Elsa.Persistence.EntityFramework.Sqlite" Version="2.9.2" />
+    <PackageReference Include="Elsa.Persistence.EntityFramework.SqlServer" Version="2.9.2" />
+    <PackageReference Include="Elsa.Server.Api" Version="2.9.2" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.0.1" />
+    <PackageReference Include="RavenDB.Client" Version="5.4.5" />
+    <PackageReference Include="System.Collections.NonGeneric" Version="4.3.0" />
+    <PackageReference Include="YesSql.Provider.PostgreSql" Version="3.2.0" />
+    <PackageReference Include="YesSql.Provider.SqlServer" Version="3.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Contents\css\" />
+  </ItemGroup>
+
+</Project>

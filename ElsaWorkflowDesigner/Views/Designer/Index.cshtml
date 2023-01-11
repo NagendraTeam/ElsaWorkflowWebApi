@@ -1,0 +1,139 @@
+﻿@model ElsaWorkflowDesigner.Models.RequestBudgetJsonData
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    // var serverUrl = $"{Request.Scheme}://{Request.Host}";
+    var serverUrl = ViewBag.serverUrl;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elsa Workflows</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/_content/Elsa.Designer.Components.Web/elsa-workflows-studio/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/_content/Elsa.Designer.Components.Web/elsa-workflows-studio/assets/images/favicon-16x16.png">
+    <link rel="stylesheet" href="/_content/Elsa.Designer.Components.Web/elsa-workflows-studio/assets/fonts/inter/inter.css">
+    <link rel="stylesheet" href="/_content/Elsa.Designer.Components.Web/elsa-workflows-studio/elsa-workflows-studio.css">
+    <script src="/_content/Elsa.Designer.Components.Web/monaco-editor/min/vs/loader.js"></script>
+    <script type="module" src="/_content/Elsa.Designer.Components.Web/elsa-workflows-studio/elsa-workflows-studio.esm.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <script src="/_content/Elsa.Designer.Components.Web/monaco-editor/min/vs/loader.js"></script>
+    <script type="module" src="/_content/Elsa.Designer.Components.Web/elsa-workflows-studio/elsa-workflows-studio.esm.js"></script>
+
+
+</head>
+
+<script>
+    $(function () {
+
+        window.onload = function () {
+            document.getElementById('budgetid').innerHTML = window.location.href.split('/')[3].split('=')[2];
+        };
+
+
+
+        // Get a reference to the elsaStudioRoot element.
+
+        //const elsaStudioRoot = document.querySelector('elsa-studio-root');
+
+        //elsaStudioRoot.addEventListener('workflow-published', e => {
+        //   alert('Hello');
+        //});
+
+
+        function CustomHttpMiddlewarePlugin(elsaStudio) {
+            const eventBus = elsaStudio.eventBus;
+
+            eventBus.on('workflow-published', e => {
+                var budgetid = document.getElementById("budgetid").innerHTML;
+                var empid = document.getElementById("empid").innerHTML;
+                $.ajax({
+                    url: 'https://localhost:44370/BudgetData/insertDocumentBudgetApproval/?empid=' + empid + '&budgetid=' + budgetid + '&workflowid=' + window.location.href.split('/')[4],
+                    type: "GET",
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    error: function (response) {
+                    },
+                    success: function (response) {
+                    }
+                });
+
+                //window.location.href = "api/insertDocumentBudgetApproval?workflowId=" + id + "&budgetType=" + budget;
+
+            });
+        }
+
+
+        const elsaStudioRoot = document.querySelector('elsa-studio-root');
+        (async () => {
+            // Wait until the component is available.
+            await customElements.whenDefined('elsa-studio-root');
+
+            // Install plugins.
+            await elsaStudioRoot.addPlugin(CustomHttpMiddlewarePlugin);
+        })();
+
+        $('#runWorkflow').click(function (e) {
+            var workflowId = window.location.href.split('/')[4];
+            var empid = document.getElementById("empid").innerHTML;
+            debugger;
+            $.ajax({
+                url: "https://localhost:44370/Approver/Index?workflowid=" + workflowId + "&empid=" + empid,
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                },
+                error: function (response) {
+                   alert("Request Sent");
+                }
+            });
+        });
+        
+        $('#ApprovalHistory').click(function (e) {
+            var workflowId = window.location.href.split('/')[4];
+            var empid = document.getElementById("empid").innerHTML;
+            $.ajax({
+                url: 'https://localhost:44370/WorkflowHistory/Index?workflowid=' + workflowId + "&empid=" + empid,
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    const winHtml = response.responseText;
+                    const winUrl = URL.createObjectURL(
+                        new Blob([winHtml], { type: "text/html" })
+                    );
+                    const win = window.open(
+                        winUrl,
+                        "win",
+                        `width=800,height=400,screenX=200,screenY=200`
+                    );
+                }
+            });
+        });
+
+    });
+</script>
+
+
+<body>
+    <div style="float: right;padding: 20px;color: lightgreen;">
+        <button id="runWorkflow">Run Workflow</button>
+    </div>
+    <div style="float: right;padding: 20px;color: lightgreen;">
+        <button id="ApprovalHistory">Approval History</button>
+    </div>
+    <div id="empid" style="float: right;padding: 20px;color: white;">@Model.RequestedBy</div>
+    <div id="budgetid" style="float: right;padding: 20px;color: white;"></div>  
+    <elsa-studio-root server-url="@Model.serverUrl" monaco-lib-path="_content/Elsa.Designer.Components.Web/monaco-editor/min">
+        <elsa-studio-dashboard></elsa-studio-dashboard>
+    </elsa-studio-root>
+</body>
+</html>
