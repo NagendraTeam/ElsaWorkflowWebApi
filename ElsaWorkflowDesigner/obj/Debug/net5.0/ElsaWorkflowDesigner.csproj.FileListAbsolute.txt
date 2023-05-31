@@ -211,7 +211,6 @@ C:\Users\u1134162\source\repos\ElsaWorkflowDesigner\ElsaWorkflowDesigner\obj\Deb
 C:\Users\u1134162\source\repos\ElsaWorkflowDesigner\ElsaWorkflowDesigner\obj\Debug\net5.0\ElsaWorkflowDesigner.Views.pdb
 C:\Users\u1134162\source\repos\ElsaWorkflowDesigner\ElsaWorkflowDesigner\obj\Debug\net5.0\ElsaWorkflowDesigner.csproj.CopyComplete
 C:\Users\u1134162\source\repos\ElsaWorkflowDesigner\ElsaWorkflowDesigner\obj\Debug\net5.0\ElsaWorkflowDesigner.dll
-C:\Users\u1134162\source\repos\ElsaWorkflowDesigner\ElsaWorkflowDesigner\obj\Debug\net5.0\refint\ElsaWorkflowDesigner.dll
 C:\Users\u1134162\source\repos\ElsaWorkflowDesigner\ElsaWorkflowDesigner\obj\Debug\net5.0\ElsaWorkflowDesigner.pdb
 C:\Users\u1134162\source\repos\ElsaWorkflowDesigner\ElsaWorkflowDesigner\obj\Debug\net5.0\ElsaWorkflowDesigner.genruntimeconfig.cache
 C:\Users\u1134162\source\repos\ElsaWorkflowDesigner\ElsaWorkflowDesigner\obj\Debug\net5.0\ref\ElsaWorkflowDesigner.dll
@@ -237,11 +236,6 @@ C:\Users\u1134162\source\repos\ElsaWorkflowDesigner\ElsaWorkflowDesigner\bin\Deb
 C:\Users\u1134162\source\repos\ElsaWorkflowDesigner\ElsaWorkflowDesigner\bin\Debug\net5.0\MailKit.dll
 C:\Users\u1134162\source\repos\ElsaWorkflowDesigner\ElsaWorkflowDesigner\bin\Debug\net5.0\MimeKit.dll
 C:\Users\u1134162\source\repos\ElsaWorkflowDesigner\ElsaWorkflowDesigner\bin\Debug\net5.0\BouncyCastle.Crypto.dll
-C:\Users\u1134162\source\repos\ElsaWorkflowDesigner\ElsaWorkflowDesigner\obj\Debug\net5.0\staticwebassets\ElsaWorkflowDesigner.StaticWebAssets.Pack.cache
-C:\Users\u1134162\source\repos\ElsaWorkflowDesigner\ElsaWorkflowDesigner\obj\Debug\net5.0\staticwebassets\msbuild.ElsaWorkflowDesigner.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\u1134162\source\repos\ElsaWorkflowDesigner\ElsaWorkflowDesigner\obj\Debug\net5.0\staticwebassets\msbuild.build.ElsaWorkflowDesigner.props
-C:\Users\u1134162\source\repos\ElsaWorkflowDesigner\ElsaWorkflowDesigner\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.ElsaWorkflowDesigner.props
-C:\Users\u1134162\source\repos\ElsaWorkflowDesigner\ElsaWorkflowDesigner\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.ElsaWorkflowDesigner.props
 C:\Users\u1134162\source\repos\ElsaWorkflowDesigner\ElsaWorkflowDesigner\obj\Debug\net5.0\Razor\Views\Workflow\Approval.cshtml.g.cs
 C:\Users\u1134162\source\repos\ElsaWorkflowDesigner\ElsaWorkflowDesigner\obj\Debug\net5.0\Razor\Views\Workflow\Index.cshtml.g.cs
 C:\Users\u1134162\source\repos\ElsaWorkflowDesigner\ElsaWorkflowDesigner\obj\Debug\net5.0\Razor\Views\Workflow\Reject.cshtml.g.cs
@@ -251,3 +245,9 @@ C:\Users\u1134162\source\repos\ElsaWorkflowDesigner\ElsaWorkflowDesigner\obj\Deb
 C:\Users\u1134162\source\repos\ElsaWorkflowDesigner\ElsaWorkflowDesigner\obj\Debug\net5.0\Razor\Views\RunWorkflow\Index.cshtml.g.cs
 C:\Users\u1134162\source\repos\ElsaWorkflowDesigner\ElsaWorkflowDesigner\obj\Debug\net5.0\Razor\Views\Account\Index.cshtml.g.cs
 C:\Users\u1134162\source\repos\ElsaWorkflowDesigner\ElsaWorkflowDesigner\obj\Debug\net5.0\Razor\Views\Account\ShowDepartmentApproval.cshtml.g.cs
+C:\Users\u1134162\source\repos\ElsaWorkflowDesigner\ElsaWorkflowDesigner\obj\Debug\net5.0\staticwebassets\ElsaWorkflowDesigner.StaticWebAssets.Pack.cache
+C:\Users\u1134162\source\repos\ElsaWorkflowDesigner\ElsaWorkflowDesigner\obj\Debug\net5.0\staticwebassets\msbuild.ElsaWorkflowDesigner.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\u1134162\source\repos\ElsaWorkflowDesigner\ElsaWorkflowDesigner\obj\Debug\net5.0\staticwebassets\msbuild.build.ElsaWorkflowDesigner.props
+C:\Users\u1134162\source\repos\ElsaWorkflowDesigner\ElsaWorkflowDesigner\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.ElsaWorkflowDesigner.props
+C:\Users\u1134162\source\repos\ElsaWorkflowDesigner\ElsaWorkflowDesigner\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.ElsaWorkflowDesigner.props
+C:\Users\u1134162\source\repos\ElsaWorkflowDesigner\ElsaWorkflowDesigner\obj\Debug\net5.0\refint\ElsaWorkflowDesigner.dll

@@ -49,6 +49,7 @@ namespace ElsaWorkflowDesigner
                     .UseEntityFrameworkPersistence(ef => ef.UseSqlServer(workflowDB))
                     .AddConsoleActivities()
                     .AddHttpActivities(elsaSection.GetSection("Server").Bind)
+                    .AddEmailActivities(elsaSection.GetSection("Smtp").Bind)
                     .AddQuartzTemporalActivities()
                     .AddWorkflowsFrom<Startup>()
                     .AddActivity<SampleOutput>()
